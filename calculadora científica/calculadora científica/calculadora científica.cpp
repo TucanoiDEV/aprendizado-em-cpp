@@ -9,17 +9,38 @@ int menu(int &operacao);
 void erroConsole();
 void limparConsole();
 float soma();
+bool funcaoExecutarPrograma();
 
 int main() {
 	setlocale(LC_ALL, "Portuguese");
 
 	int operacao = 0;
 
-	menu(operacao);
+	bool executarPrograma = true;
 
-	float a = soma();
+	while (executarPrograma == true) {
+		menu(operacao);
+
+		float a = soma();
+		executarPrograma = funcaoExecutarPrograma();
+	}
 
 	return 0;
+}
+
+bool funcaoExecutarPrograma() {
+	string resposta;
+
+	cout << "Deseja executar uma nova operação? (Digite 'sim' para sim ou qualquer outra coisa para não." << endl;
+	cout << "resposta: ";
+	cin >> resposta;
+	limparConsole();
+	if (resposta == "sim") {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 void erroConsole() {
@@ -85,12 +106,8 @@ float soma() {
 			limparConsole();
 			resultado = numero1 + numero2;
 			cout << numero1 << " + " << numero2 << " = " << resultado << endl;
-
-			float resposta;
-			cout << "Deseja executar uma nova operação? (Digite 'sim' para sim ou qualquer outra coisa para não";
-			cin >> resposta;
-
 		}
-
+		break;
+		return 0;
 	}
 }
