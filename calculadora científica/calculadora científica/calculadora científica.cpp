@@ -8,7 +8,8 @@ using namespace std;
 int menu(int &operacao);
 void erroConsole();
 void limparConsole();
-float soma();
+float adicao();
+float subtracao();
 bool funcaoExecutarPrograma();
 
 int main() {
@@ -21,7 +22,14 @@ int main() {
 	while (executarPrograma == true) {
 		menu(operacao);
 
-		float a = soma();
+		switch (operacao) {
+		case 1:
+			adicao();
+			break;
+		case 2:
+			subtracao();
+			break;
+		}
 		executarPrograma = funcaoExecutarPrograma();
 	}
 
@@ -84,7 +92,7 @@ int menu(int &operacao) {
 	return operacao;
 }
 
-float soma() {
+float adicao() {
 	float numero1 = 0;
 	float numero2 = 0;
 	float resultado = 0;
@@ -106,6 +114,33 @@ float soma() {
 			limparConsole();
 			resultado = numero1 + numero2;
 			cout << numero1 << " + " << numero2 << " = " << resultado << endl;
+		}
+		break;
+		return 0;
+	}
+}
+float subtracao() {
+	float numero1 = 0;
+	float numero2 = 0;
+	float resultado = 0;
+
+	while (true) {
+		cout << "Digite o primeiro número: ";
+		if (!(cin >> numero1)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		cout << "Digite o segundo número: ";
+		if (!(cin >> numero2)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			resultado = numero1 - numero2;
+			cout << numero1 << " - " << numero2 << " = " << resultado << endl;
 		}
 		break;
 		return 0;
