@@ -11,6 +11,8 @@ void limparConsole();
 float adicao();
 float subtracao();
 bool funcaoExecutarPrograma();
+float multiplicacao();
+float divisao();
 
 int main() {
 	setlocale(LC_ALL, "Portuguese");
@@ -23,11 +25,17 @@ int main() {
 		menu(operacao);
 
 		switch (operacao) {
-		case 1:
+		case 0:
 			adicao();
 			break;
-		case 2:
+		case 1:
 			subtracao();
+			break;
+		case 2:
+			multiplicacao();
+			break;
+		case 3:
+			divisao();
 			break;
 		}
 		executarPrograma = funcaoExecutarPrograma();
@@ -141,6 +149,93 @@ float subtracao() {
 			limparConsole();
 			resultado = numero1 - numero2;
 			cout << numero1 << " - " << numero2 << " = " << resultado << endl;
+		}
+		break;
+		return 0;
+	}
+}
+float multiplicacao() {
+	float numero1 = 0;
+	float numero2 = 0;
+	float resultado = 0;
+
+	while (true) {
+		cout << "Digite o primeiro número: ";
+		if (!(cin >> numero1)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		cout << "Digite o segundo número: ";
+		if (!(cin >> numero2)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			resultado = numero1 * numero2;
+			cout << numero1 << " * " << numero2 << " = " << resultado << endl;
+		}
+		break;
+		return 0;
+	}
+}
+float divisao() {
+	float numero1 = 0;
+	float numero2 = 0;
+	float resultado = 0;
+
+	while (true) {
+		cout << "Digite o primeiro número: ";
+		if (!(cin >> numero1)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		cout << "Digite o segundo número: ";
+		if (!(cin >> numero2)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+
+		if (numero1 == 0 || numero2 == 0) {
+			cout << "ERRO, nenhum número pode ser dividido por 0!";
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			resultado = numero1 / numero2;
+			cout << numero1 << " / " << numero2 << " = " << resultado << endl;
+		}
+		break;
+		return 0;
+	}
+}
+float potencia() {
+	float numero1 = 0;
+	float numero2 = 0;
+	float resultado = 0;
+
+	while (true) {
+		cout << "Digite o número  da base: ";
+		if (!(cin >> numero1)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		cout << "Digite o número do expoente: ";
+		if (!(cin >> numero2)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			resultado = numero1 *& numero2;
+			cout << numero1 << " / " << numero2 << " = " << resultado << endl;
 		}
 		break;
 		return 0;
