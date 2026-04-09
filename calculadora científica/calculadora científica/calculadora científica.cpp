@@ -10,9 +10,11 @@ void erroConsole();
 void limparConsole();
 float adicao();
 float subtracao();
-bool funcaoExecutarPrograma();
+bool reexecutarPrograma();
 float multiplicacao();
 float divisao();
+float potencia();
+float raiz();
 
 int main() {
 	setlocale(LC_ALL, "Portuguese");
@@ -37,14 +39,20 @@ int main() {
 		case 3:
 			divisao();
 			break;
+		case 4:
+			potencia();
+			break;
+		case 5:
+			raiz();
+			break;
 		}
-		executarPrograma = funcaoExecutarPrograma();
+		executarPrograma = reexecutarPrograma();
 	}
 
 	return 0;
 }
 
-bool funcaoExecutarPrograma() {
+bool reexecutarPrograma() {
 	string resposta;
 
 	cout << "Deseja executar uma nova operação? (Digite 'sim' para sim ou qualquer outra coisa para não." << endl;
@@ -76,7 +84,7 @@ void limparConsole() {
 int menu(int &operacao) {
 	while (operacao != 10) {
 		cout << "====================\nBEM VINDO À MINHA CALCULADORA CIENTÍFICA!!!\n====================" << endl;
-		cout << "\n DIGITE O NÚMERO AO LADO PARA ESCOLHER A OPERAÇÃO DESEJADA: \n 0 - ADIÇÃO \n 1 - SUBTRAÇÃO \n 2 - MULTIPLICAÇÃO \n 3 - DIVISÃO \n 4 - POTÊNCIA \n 5 - RAIZ QUADRADA \n 6 - LOGARITMO \n 7 - SENO \n 8 - COSSENO \n 9 - TANGENTE\n 10 - SAIR" << endl;
+		cout << "\n DIGITE O NÚMERO AO LADO PARA ESCOLHER A OPERAÇÃO DESEJADA: \n 0 - ADIÇÃO \n 1 - SUBTRAÇÃO \n 2 - MULTIPLICAÇÃO \n 3 - DIVISÃO \n 4 - POTÊNCIA \n 5 - RAIZ \n 6 - LOGARITMO \n 7 - SENO \n 8 - COSSENO \n 9 - TANGENTE\n 10 - SAIR" << endl;
 		cout << "Resposta selecionada: ";
 		if (!(cin >> operacao)) {
 			cout << "ERRO: Digite apenas números!" << endl;
@@ -234,10 +242,38 @@ float potencia() {
 		}
 		else {
 			limparConsole();
-			resultado = numero1 *& numero2;
-			cout << numero1 << " / " << numero2 << " = " << resultado << endl;
+			resultado = pow(numero1, numero2);
+			cout << numero1 << " ^ " << numero2 << " = " << resultado << endl;
 		}
 		break;
 		return 0;
 	}
 }
+float raiz() {
+	float numero1 = 0;
+	float numero2 = 0;
+	float resultado = 0;
+
+	while (true) {
+		cout << "Digite o número  do radicando: ";
+		if (!(cin >> numero1)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		cout << "Digite o número do indice: ";
+		if (!(cin >> numero2)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			resultado = pow(numero1, 1 / numero2);
+			cout << "A raiz " << numero2 << " de " << numero1 << " é " << resultado << endl;
+		}
+		break;
+		return 0;
+	}
+}
+
