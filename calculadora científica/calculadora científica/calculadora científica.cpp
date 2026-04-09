@@ -17,6 +17,8 @@ float potencia();
 float raiz();
 float logaritmo();
 float seno();
+float cosseno();
+float tangente();
 
 int main() {
 	setlocale(LC_ALL, "Portuguese");
@@ -53,6 +55,15 @@ int main() {
 		case 7:
 			seno();
 			break;
+		case 8:
+			cosseno();
+			break;
+		case 9:
+			tangente();
+			break;
+		case 10:
+			cout << "Obrigado por usar minha calculadora científica, até a próxima!" << endl;
+			return 0;
 		}
 		executarPrograma = reexecutarPrograma();
 	}
@@ -332,5 +343,51 @@ float seno() {
 
 		break;
 		return 0;
+	}
+}
+float cosseno() {
+	const double pi = 3.14159265358979323846;
+	float grau = 0;
+	float cosseno = 0;
+	float radiano = 0;
+
+	while (true) {
+		cout << "Digite o número  do grau: ";
+		if (!(cin >> grau)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			radiano = grau * (pi / 180);
+			cosseno = cos(radiano);
+			cout << "O cosseno de " << grau << " graus é " << cosseno << endl;
+			break;
+			return 0;
+		}
+	}
+}
+float tangente() {
+	const double pi = 3.14159265358979323846;
+	float grau = 0;
+	float tangente = 0;
+	float radiano = 0;
+
+	while (true) {
+		cout << "Digite o número  do grau: ";
+		if (!(cin >> grau)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			radiano = grau * (pi / 180);
+			tangente = tan(radiano);
+			cout << "A tangente de " << grau << " graus é " << tangente << endl;
+			break;
+			return 0;
+		}
 	}
 }
