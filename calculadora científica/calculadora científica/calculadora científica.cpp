@@ -15,6 +15,8 @@ float multiplicacao();
 float divisao();
 float potencia();
 float raiz();
+float logaritmo();
+float seno();
 
 int main() {
 	setlocale(LC_ALL, "Portuguese");
@@ -44,6 +46,12 @@ int main() {
 			break;
 		case 5:
 			raiz();
+			break;
+		case 6:
+			logaritmo();
+			break;
+		case 7:
+			seno();
 			break;
 		}
 		executarPrograma = reexecutarPrograma();
@@ -276,4 +284,53 @@ float raiz() {
 		return 0;
 	}
 }
+float logaritmo() {
+	float numero1 = 0;
+	float numero2 = 0;
+	float resultado = 0;
 
+	while (true) {
+		cout << "Digite o número  de sua base: ";
+		if (!(cin >> numero1)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		cout << "Digite o número do logaritmo: ";
+		if (!(cin >> numero2)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+		else {
+			limparConsole();
+			resultado = log(numero2) / log(numero1);
+			cout << "O logaritmo de " << numero2 << " na base " << numero1 << " é " << resultado << endl;
+		}
+		break;
+		return 0;
+	}
+}
+float seno() {
+	const double pi = 3.14159265358979323846;
+	float grau = 0;
+
+	while (true) {
+		cout << "Digite o número  do grau: ";
+		if (!(cin >> grau)) {
+			cout << "ERRO: Digite apenas números!" << endl;
+			erroConsole();
+			continue;
+		}
+
+		float radiano = grau * (pi / 180);
+		float seno = sin(radiano);
+
+		limparConsole();
+		seno = sin(radiano);
+		cout << "O seno de " << grau << " graus é " << seno << endl;
+
+		break;
+		return 0;
+	}
+}
