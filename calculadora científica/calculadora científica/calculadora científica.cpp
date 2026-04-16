@@ -8,12 +8,13 @@ using namespace std;
 int menu(int &operacao);
 void erroConsole();
 void limparConsole();
-float adicao();
-float subtracao();
+void digitarNumeros();
+void adicao();
+void subtracao();
 bool reexecutarPrograma();
-float multiplicacao();
-float divisao();
-float potencia();
+void multiplicacao();
+void divisao();
+void potencia();
 float raiz();
 float logaritmo();
 float seno();
@@ -127,11 +128,7 @@ int menu(int &operacao) {
 	return operacao;
 }
 
-float adicao() {
-	float numero1 = 0;
-	float numero2 = 0;
-	float resultado = 0;
-
+void digitarNumeros(float &numero1, float &numero2) {
 	while (true) {
 		cout << "Digite o primeiro número: ";
 		if (!(cin >> numero1)) {
@@ -145,103 +142,51 @@ float adicao() {
 			erroConsole();
 			continue;
 		}
-		else {
-			limparConsole();
-			resultado = numero1 + numero2;
-			cout << numero1 << " + " << numero2 << " = " << resultado << endl;
-		}
 		break;
-		return 0;
 	}
 }
-float subtracao() {
-	float numero1 = 0;
-	float numero2 = 0;
-	float resultado = 0;
 
-	while (true) {
-		cout << "Digite o primeiro número: ";
-		if (!(cin >> numero1)) {
-			cout << "ERRO: Digite apenas números!" << endl;
-			erroConsole();
-			continue;
-		}
-		cout << "Digite o segundo número: ";
-		if (!(cin >> numero2)) {
-			cout << "ERRO: Digite apenas números!" << endl;
-			erroConsole();
-			continue;
-		}
-		else {
-			limparConsole();
-			resultado = numero1 - numero2;
-			cout << numero1 << " - " << numero2 << " = " << resultado << endl;
-		}
-		break;
-		return 0;
-	}
+void adicao() {
+	float numero1, numero2, resultado;
+
+	digitarNumeros(numero1, numero2);
+
+	limparConsole();
+	resultado = numero1 + numero2;
+	cout << numero1 << " + " << numero2 << " = " << resultado << endl;
 }
-float multiplicacao() {
-	float numero1 = 0;
-	float numero2 = 0;
-	float resultado = 0;
 
-	while (true) {
-		cout << "Digite o primeiro número: ";
-		if (!(cin >> numero1)) {
-			cout << "ERRO: Digite apenas números!" << endl;
-			erroConsole();
-			continue;
-		}
-		cout << "Digite o segundo número: ";
-		if (!(cin >> numero2)) {
-			cout << "ERRO: Digite apenas números!" << endl;
-			erroConsole();
-			continue;
-		}
-		else {
-			limparConsole();
-			resultado = numero1 * numero2;
-			cout << numero1 << " * " << numero2 << " = " << resultado << endl;
-		}
-		break;
-		return 0;
-	}
+void subtracao() {
+	float numero1, numero2, resultado;
+
+	digitarNumeros(numero1, numero2);
+
+	limparConsole();
+	resultado = numero1 - numero2;
+	cout << numero1 << " - " << numero2 << " = " << resultado << endl;
 }
-float divisao() {
-	float numero1 = 0;
-	float numero2 = 0;
-	float resultado = 0;
 
-	while (true) {
-		cout << "Digite o primeiro número: ";
-		if (!(cin >> numero1)) {
-			cout << "ERRO: Digite apenas números!" << endl;
-			erroConsole();
-			continue;
-		}
-		cout << "Digite o segundo número: ";
-		if (!(cin >> numero2)) {
-			cout << "ERRO: Digite apenas números!" << endl;
-			erroConsole();
-			continue;
-		}
+void multiplicacao() {
+	float numero1, numero2, resultado;
 
-		if (numero1 == 0 || numero2 == 0) {
-			cout << "ERRO, nenhum número pode ser dividido por 0!";
-			erroConsole();
-			continue;
-		}
-		else {
-			limparConsole();
-			resultado = numero1 / numero2;
-			cout << numero1 << " / " << numero2 << " = " << resultado << endl;
-		}
-		break;
-		return 0;
-	}
+	digitarNumeros(numero1, numero2);
+
+	limparConsole();
+	resultado = numero1 * numero2;
+	cout << numero1 << " * " << numero2 << " = " << resultado << endl;
 }
-float potencia() {
+
+void divisao() {
+	float numero1, numero2, resultado;
+
+	digitarNumeros(numero1, numero2);
+
+	limparConsole();
+	resultado = numero1 / numero2;
+	cout << numero1 << " / " << numero2 << " = " << resultado << endl;
+}
+
+void potencia() {
 	float numero1 = 0;
 	float numero2 = 0;
 	float resultado = 0;
@@ -265,7 +210,6 @@ float potencia() {
 			cout << numero1 << " ^ " << numero2 << " = " << resultado << endl;
 		}
 		break;
-		return 0;
 	}
 }
 float raiz() {
