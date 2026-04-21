@@ -124,6 +124,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="calculadora científica.cpp" />
+    <ClCompile Include="menuPrincipal.cpp" />
+    <ClCompile Include="operacoes.cpp" />
+    <ClCompile Include="utilitarios.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="menuPrincipal.h" />
+    <ClInclude Include="operacoes.h" />
+    <ClInclude Include="utilitarios.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

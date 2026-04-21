@@ -6,11 +6,10 @@ void subtracao();
 void multiplicacao();
 void divisao();
 void potencia();
-float raiz();
-float logaritmo();
-float seno();
-float cosseno();
-float tangente();
-
+void raiz();
+void logaritmo();
+void seno();
+void cosseno();
+void tangente();
 
 #endif

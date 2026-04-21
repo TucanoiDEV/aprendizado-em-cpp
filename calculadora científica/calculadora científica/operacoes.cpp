@@ -4,6 +4,7 @@
 #include <cmath>
 #include "utilitarios.h"
 #include "operacoes.h"
+#include "menuPrincipal.h"
 
 using namespace std;
 
@@ -74,7 +75,7 @@ void potencia() {
 	}
 }
 
-float raiz() {
+void raiz() {
 	float numero1 = 0;
 	float numero2 = 0;
 	float resultado = 0;
@@ -98,11 +99,10 @@ float raiz() {
 			cout << "A raiz " << numero2 << " de " << numero1 << " é " << resultado << endl;
 		}
 		break;
-		return 0;
 	}
 }
 
-float logaritmo() {
+void logaritmo() {
 	float numero1 = 0;
 	float numero2 = 0;
 	float resultado = 0;
@@ -126,11 +126,10 @@ float logaritmo() {
 			cout << "O logaritmo de " << numero2 << " na base " << numero1 << " é " << resultado << endl;
 		}
 		break;
-		return 0;
 	}
 }
 
-float seno() {
+void seno() {
 	const double pi = 3.14159265358979323846;
 	float grau = 0;
 
@@ -150,11 +149,10 @@ float seno() {
 		cout << "O seno de " << grau << " graus é " << seno << endl;
 
 		break;
-		return 0;
 	}
 }
 
-float cosseno() {
+void cosseno() {
 	const double pi = 3.14159265358979323846;
 	float grau = 0;
 	float cosseno = 0;
@@ -173,12 +171,11 @@ float cosseno() {
 			cosseno = cos(radiano);
 			cout << "O cosseno de " << grau << " graus é " << cosseno << endl;
 			break;
-			return 0;
 		}
 	}
 }
 
-float tangente() {
+void tangente() {
 	const double pi = 3.14159265358979323846;
 	float grau = 0;
 	float tangente = 0;
@@ -197,7 +194,6 @@ float tangente() {
 			tangente = tan(radiano);
 			cout << "A tangente de " << grau << " graus é " << tangente << endl;
 			break;
-			return 0;
 		}
 	}
 }

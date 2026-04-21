@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <locale.h>
+#include <limits>
 #include "utilitarios.h"
 
 using namespace std;
